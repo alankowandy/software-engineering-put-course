@@ -1,0 +1,79 @@
+// Use DBML to define your database structure
+// Docs: https://dbml.dbdiagram.io/docs
+
+
+
+Table users 
+{
+  id integer [primary key]
+  username varchar
+  password varchar
+  fullname varchar
+  number integer
+  email varchar
+  admin bool
+}
+
+Table Products
+{
+  id varchar [primary key] // nazwa
+  opis varchar
+  min integer
+  max_in_box integer
+  unit text
+}
+
+Table Storage_rack
+{
+  id varchar [primary key]
+  hall varchar
+}
+
+Table Shelf
+{
+  id varchar [primary key]
+  id_storage_rack varchar
+}
+
+Table Box
+{
+  id varchar [primary key]
+  shelf_id varchar
+  product_id varchar
+  quantity varchar
+}
+
+Table Orders
+{
+  id int [primary key]
+  products int
+  confirmed bool
+  price float
+}
+
+Table Delivery
+{
+  id int [primary key]
+  products int
+  delivered bool
+  delivery_date date
+}
+
+Table List_Of_Products
+{
+  id int
+  product_id varchar
+  quantity int
+}
+
+Ref: "Products"."id" < "List_Of_Products"."product_id"
+
+Ref: "Orders"."products" < "List_Of_Products"."id"
+
+Ref: "Delivery"."products" < "List_Of_Products"."id"
+
+Ref: "Box"."product_id" > "Products"."id"
+
+Ref: "Shelf"."id" < "Box"."shelf_id"
+
+Ref: "Storage_rack"."id" < "Shelf"."id_storage_rack"
