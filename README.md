@@ -64,6 +64,12 @@ This project was created for a software engineering course at Politechnika Pozna
 
 ---
 
+## More detailed information (in Polish)
+
+[IoL-L3-Z1-240126-SK.pdf](https://github.com/user-attachments/files/16020081/IoL-L3-Z1-240126-SK.pdf)
+
+---
+
 ## Screenshots
 <p>
     <img src="https://github.com/alankowandy/software-engineering-put-course/assets/100705149/cee5a89c-c118-4238-aaec-0e7003ee1a62" alt="" width="200">
